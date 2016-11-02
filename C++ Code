@@ -655,10 +655,10 @@ int menu_module()
         default :
             cout << "Error Please Enter a Valid Input... Returning to Top Menu"<<endl;
         break;
-        } //end of switch menu
-        break; //break of case d
+        } //end of switch menu                            
+        break; //break of case d                         /* This line of code is giving an error  */
 
-        }//end of switch menu
+        }//end of switch menu                             /* This line of code is giving an error  */
 }//end of module
 int calculation()
 {
