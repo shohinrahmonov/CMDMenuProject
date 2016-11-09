@@ -781,9 +781,11 @@ cout << "Your Order";
 
     cout << " GST (6%) = RM " << gst <<endl;
     cout << " Your Total = RM " << basic_total <<endl;
-    cout << " How would you be making your payment?" <<endl << "(1).Credit Card(8% service charge)" <<endl "(2)Cash (5% charge)"<<endl;
+    cout << " How would you be making your payment?" <<endl;
+    cout <<"(1).Credit Card(8% service charge)";
+    cout << "(2)Cash (5% charge)"<<endl;
     cout << "Input (1) or (2)";
-    cin << payment_method;
+    cin >> payment_method;
     method_check == 0;
     while (method_check == 0)
     {
@@ -795,7 +797,7 @@ cout << "Your Order";
         cout << "Final Total = RM " << final_total<<endl;
         avg_total = final_total / number_of_customers;
         cout << "Total Per Person = RM " << avg_total<<endl;
-        
+
         method_check++;
         break;
     case 2:
@@ -804,11 +806,11 @@ cout << "Your Order";
         cout << "Final Total = RM " << final_total<<endl;
         avg_total = final_total / number_of_customers;
         cout << "Total Per Person = RM " << avg_total<<endl;
-        
+
         method_check++;
         break;
     default :
-        cout << "Invalid Input - Please Enter (1) for Credit Card or (2) for Cash"
+        cout << "Invalid Input - Please Enter (1) for Credit Card or (2) for Cash";
         cin >> payment_method;
     }//end of payment method switch
     }//end of while
