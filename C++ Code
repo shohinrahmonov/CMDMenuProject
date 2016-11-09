@@ -6,7 +6,8 @@ using namespace std;
 char member,cnt1,gender;//cnt1=continue
 string first_name, last_name, prefix; //customer name
 int id,number_of_customers;
-int num_orders, counter[36]{0},updater[36]{0},total[36]{0}; // order tracker
+int num_orders, counter[36]{0},updater[36]{0};
+float total[36]{0}; // order tracker
 int input = 0;
 /* Menu Items and their array number -
 chicken_burger(0),beef_burger(1),fish_chip(2),blt_sandwich(3),chicken_chop(4),salad(5)cola(6),sprite(7),100plus(8),
@@ -18,10 +19,11 @@ vanilla_muffin(31),chocolate_muffin(32),banana_muffin(33),chocolate_chip_muffin(
 char menu,menu_c; //menu = choose a menu , menu_c = do you wish to continue with menu
 int food,drink,sweet,patty,soda,coffee,tea,ice_cream,muffin; //menu selector
 //calculation variables
-int order_cnt;
+int order_cnt, payment_method,method_check;
 float food_total,drink_total,dessert_total;
-float basic_total,service_charge,gst_charge,final_total;
+float basic_total,service_charge,gst_charge,final_total,avg_total;
 float cash_charge,credit_charge,gst;
+
 
 int name()
 {
@@ -655,15 +657,163 @@ int menu_module()
         default :
             cout << "Error Please Enter a Valid Input... Returning to Top Menu"<<endl;
         break;
-        } //end of switch menu
-        break; //break of case d
-
         }//end of switch menu
 }//end of module
 int calculation()
 {
 cout << "Calculating Total";
-}
+total[0] = counter[0] * 7;
+total[1] = counter[1] * 7;
+total[2] = counter[2] * 10;
+total[3] = counter[3] * 5;
+total[4] = counter[4] * 10;
+total[5] = counter[5] * 5;
+total[6] = counter[6] * 1.5;
+total[7] = counter[7] * 1.5;
+total[8] = counter[8] * 1.5;
+total[9] = counter[9] * 1.5;
+total[10] = counter[10] * 1.5;
+total[11] = counter[11] * 5;
+total[12] = counter[12] * 7;
+total[13] = counter[13] * 7;
+total[14] = counter[14] * 4;
+total[15] = counter[15] * 6;
+total[16] = counter[16] * 1;
+total[17] = counter[17] * 2;
+total[18] = counter[18] * 3;
+total[19] = counter[19] * 3;
+total[20] = counter[20] * 3;
+total[21] = counter[21] * 3;
+total[22] = counter[22] * 3;
+total[23] = counter[23] * 4;
+total[24] = counter[24] * 4;
+total[25] = counter[25] * 4;
+total[26] = counter[26] * 4;
+total[27] = counter[27] * 4;
+total[28] = counter[28] * 7;
+total[29] = counter[29] * 7;
+total[30] = counter[30] * 5;
+total[31] = counter[31] * 4;
+total[32] = counter[32] * 4;
+total[33] = counter[33] * 4;
+total[34] = counter[34] * 4;
+total[35] = counter[35] * 4;
+
+cout << "Your Order";
+    if (counter[0 >= 1])
+    cout <<counter[0] << " Chicken CheeseBurger - RM" <<total[0]<<endl;
+    if (counter[1 >= 1])
+    cout <<counter[1] <<  " Beef CheeseBurger - RM" <<total[1]<<endl;
+    if (counter[2 >= 1])
+    cout <<counter[2] <<  " Fish and Chips - RM" <<total[2]<<endl;
+    if (counter[3 >= 1])
+    cout <<counter[3] <<  " BLT Sandwich - RM" <<total[3]<<endl;
+    if (counter[4 >= 1])
+    cout <<counter[4] <<  " Chicken Chop - RM" <<total[4]<<endl;
+    if (counter[5 >= 1])
+    cout <<counter[5] <<  " Salad - RM" <<total[5]<<endl;
+    if (counter[6 >= 1])
+    cout <<counter[6] <<  " Cola - RM" <<total[6]<<endl;
+    if (counter[7 >= 1])
+    cout <<counter[7] <<  " Sprite - RM" <<total[7]<<endl;
+    if (counter[8 >= 1])
+    cout <<counter[8] <<  " 100 Plus - RM" <<total[8]<<endl;
+    if (counter[9 >= 1])
+    cout <<counter[9] <<  " Strawberry Fanta - RM" <<total[9]<<endl;
+    if (counter[10 >= 1])
+    cout <<counter[10] <<  "Grape Fanta - RM" <<total[10]<<endl;
+    if (counter[11 >= 1])
+    cout <<counter[11] <<  " Espresso - RM" <<total[11]<<endl;
+    if (counter[12 >= 1])
+    cout <<counter[12] <<  " Caffe Latte - RM" <<total[12]<<endl;
+    if (counter[13 >= 1])
+    cout <<counter[13] <<  " Cappuccino - RM" <<total[13]<<endl;
+    if (counter[14 >= 1])
+    cout <<counter[14] <<  " Americano - RM" <<total[14]<<endl;
+    if (counter[15 >= 1])
+    cout <<counter[15] <<  " Ice Coffee - RM" <<total[15]<<endl;
+    if (counter[16 >= 1])
+    cout <<counter[16] <<  " Water - RM" <<total[16]<<endl;
+    if (counter[17 >= 1])
+    cout <<counter[17] <<  " Lemon Tea - RM" <<total[17]<<endl;
+    if (counter[18 >= 1])
+    cout <<counter[18] <<  " Black Tea - RM" <<total[18]<<endl;
+    if (counter[19 >= 1])
+    cout <<counter[19] <<  " Green Tea - RM" <<total[19]<<endl;
+    if (counter[20 >= 1])
+    cout <<counter[20] <<  " Oolong Tea - RM" <<total[20]<<endl;
+    if (counter[21 >= 1])
+    cout <<counter[21] <<  " Earl Grey Tea - RM" <<total[21]<<endl;
+    if (counter[22 >= 1])
+    cout <<counter[22] <<  " Jasmine Tea - RM" <<total[22]<<endl;
+    if (counter[23 >= 1])
+    cout <<counter[23] <<  " Vanilla Ice-Cream - RM" <<total[23]<<endl;
+    if (counter[24 >= 1])
+    cout <<counter[24] <<  " Chocolate Ice-Cream - RM" <<total[24]<<endl;
+    if (counter[25 >= 1])
+    cout <<counter[25] <<  " Mint Ice-Cream - RM" <<total[25]<<endl<<endl;
+    if (counter[26 >= 1])
+    cout <<counter[26] <<  " Chocolate Chip Ice-Cream - RM" <<total[26]<<endl;
+    if (counter[27 >= 1])
+    cout <<counter[27] <<  " Orange Ice Cream - RM" <<total[27]<<endl;
+    if (counter[28 >= 1])
+    cout <<counter[28] <<  " Chocolate Cake - RM" <<total[28]<<endl;
+    if (counter[29 >= 1])
+    cout <<counter[29] <<  " Cheese Cake - RM" <<total[29]<<endl;
+    if (counter[30 >= 1])
+    cout <<counter[30] <<  " Chocolate Lava Cake - RM" <<total[30]<<endl;
+    if (counter[31 >= 1])
+    cout <<counter[31] <<  " Vanilla Muffin - RM" <<total[31]<<endl;
+    if (counter[32 >= 1])
+    cout <<counter[32] <<  " Chocolate Muffin - RM" <<total[32]<<endl;
+    if (counter[33 >= 1])
+    cout <<counter[33] <<  " Banana Muffin - RM" <<total[33]<<endl;
+    if (counter[34 >= 1])
+    cout <<counter[34] <<  " Chocolate Chip Muffin - RM" <<total[34]<<endl;
+    if (counter[35 >= 1])
+    cout <<counter[35] <<  " Raisin Muffin - RM" <<total[35]<<endl;
+
+    basic_total = total[0] + total[1] + total[2] + total[3] + total[4] + total[5] + total[6] + total[7] + total[8] + total[9] + total[10] + total[11] + total[12] + total[13] + total[14] + total[15] + total[16] + total[17] + total[18] + total[19] + total[20] + total[21] + total[22] + total[23] + total[24] + total[25] + total[26] + total[27] + total[28] + total[29] + total[30] + total[31] + total[32] + total[33] + total[34] + total[35];
+    gst = (basic_total / 100) * 6;
+    basic_total = basic_total + gst;
+    cash_charge = (basic_total/100)*8;
+    credit_charge = (basic_total/100)*5;
+
+    cout << " GST (6%) = RM " << gst <<endl;
+    cout << " Your Total = RM " << basic_total <<endl;
+    cout << " How would you be making your payment?" <<endl << "(1).Credit Card(8% service charge)" <<endl "(2)Cash (5% charge)"<<endl;
+    cout << "Input (1) or (2)";
+    cin << payment_method;
+    method_check == 0;
+    while (method_check == 0)
+    {
+    switch (payment_method)
+    {
+    case 1:
+        cout << "Credit Card Charge(8%) = RM" << credit_charge <<endl;
+        final_total = basic_total + credit_charge;
+        cout << "Final Total = RM " << final_total<<endl;
+        avg_total = final_total / number_of_customers;
+        cout << "Total Per Person = RM " << avg_total<<endl;
+        
+        method_check++;
+        break;
+    case 2:
+        cout << "Cash Charge(5%) = RM" << cash_charge <<endl;
+        final_total = basic_total + cash_charge;
+        cout << "Final Total = RM " << final_total<<endl;
+        avg_total = final_total / number_of_customers;
+        cout << "Total Per Person = RM " << avg_total<<endl;
+        
+        method_check++;
+        break;
+    default :
+        cout << "Invalid Input - Please Enter (1) for Credit Card or (2) for Cash"
+        cin >> payment_method;
+    }//end of payment method switch
+    }//end of while
+
+}//end of calculation module
 int main()
 {
     cout << "Please enter the number of person(s)" <<endl;
